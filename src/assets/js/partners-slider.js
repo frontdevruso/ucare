@@ -4,6 +4,7 @@ if(document.querySelector('.partners__slider')) {
         slidesPerView: "auto",
         spaceBetween: 30,
         grabCursor: true,
+        centeredSlides: true,
         loop: true,
     });
 }

@@ -1,6 +1,8 @@
 .partners {
     margin-bottom: 60px;
 
+    @media (max-width: 575px) { margin-bottom: 40px }
+
     &__container {
         h2 {
             text-align: center;
@@ -10,6 +12,8 @@
         .partners__slider {
             margin-bottom: 50px;
             position: relative;
+
+            @media (max-width: 992px) { margin-bottom: 44px }
 
             &-item {
                 width: 190px;
@@ -42,6 +46,13 @@
 
                 background: linear-gradient(270deg, #FFFFFF 71.84%, rgba(255, 255, 255, 0) 100%);
                 transform: rotate(180deg) translateY(50%);
+
+                @media (max-width: 992px) { 
+                    width: 166px;
+                    height: 346px;
+                }
+
+                @media (max-width: 575px) { width: 50px }
             }
 
             &::before {
@@ -58,9 +69,20 @@
             line-height: 160%;
             max-width: 920px;
 
+            padding: 0 33px;
+            position: relative;
+            z-index: 10;
+
             margin-left: auto;
             margin-right: auto;
             text-align: center;
+
+            @media (max-width: 575px) { font-size: 20px }
+
+            @media (max-width: 450px) { 
+                padding: 0 15px;
+                font-size: 14px;
+            }
         }
     }
 }

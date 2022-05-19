@@ -1,7 +1,17 @@
 .products {
     display: flex;
-
     margin-bottom: 130px;
+
+    @media (max-width: 450px) {
+        margin-bottom: 44px;
+    }
+
+    &__container {
+        @media (max-width: 768px) {
+            padding-left: 18px;
+            padding-right: 18px;
+        }
+    }
 
     h2 {
         text-align: center;
@@ -11,6 +21,12 @@
     main {
         display: flex;
         width: 100%;
+        
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
         ul {
             display: flex;
@@ -23,8 +39,11 @@
                 max-width: 540px;
                 position: relative;
 
-                &:not(:last-child) {
-                    margin-bottom: 32px;
+                &:not(:last-child) { margin-bottom: 32px }
+
+                img {
+                    width: 100%;
+                    height: auto;
                 }
                 
                 span {
@@ -40,14 +59,33 @@
 
                     border-radius: 20px;
                     text-transform: uppercase;
+
+                    @media (max-width: 992px) {
+                        padding: 10px 20px;
+                        font-size: 24px;
+                    }
+
+                    @media (max-width: 768px) {
+                        padding: 14px 20px;
+                        font-size: 32px;
+                    }
+                    
+                    @media (max-width: 450px) {
+                        padding: 10px 20px;
+                        font-size: 24px;
+                    }
                 }
             }
 
             &:not(:last-child) {
                 margin-right: 33px;
+                @media (max-width: 768px) { margin-right: 0; margin-bottom: 12px }
+
                 li {
-                    &:not(:last-child) {
-                        margin-bottom: 24px;
+                    &:not(:last-child) { margin-bottom: 24px }
+
+                    @media (max-width: 768px) {
+                        &:not(:last-child) { margin-bottom: 12px }
                     }
                 }
             }

@@ -1,7 +1,13 @@
 .resources {
+    margin-bottom: 92px;
+
+    @media (max-width: 450px) { margin-bottom: 44px }
+
     &__container {
         display: flex;
         flex-direction: column;
+
+        @media (max-width: 1200px) { box-sizing: border-box }
     }
 
     h2 {
@@ -14,9 +20,16 @@
 
         display: grid;
         grid-template-columns: repeat(4, 255px);
-        grid-column-gap: 30px;
+        grid-gap: 30px;
 
-        margin-bottom: 92px;
+        @media (max-width: 1200px) {
+            grid-template-columns: repeat(2, 255px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) { grid-template-columns: repeat(2, 240px) }
+        @media (max-width: 575px) { grid-template-columns: repeat(1, 100%) }
 
         li {
             display: flex;
@@ -27,6 +40,21 @@
             border-radius: 30px;
 
             padding: 40px 13.5px;
+        
+
+            @media (max-width: 1200px) {
+                height: 295px;
+                box-sizing: border-box;
+            }
+
+            @media (max-width: 575px) {
+                max-width: 350px;
+                margin: 0 auto;
+
+                width: 100%;
+                padding: 30px 20px;
+                height: auto;
+            }
 
             svg {
                 width: 80px;

@@ -1,0 +1,120 @@
+.stores  {
+    margin-bottom: 130px;
+    @media (max-width: 575px) { margin-bottom: 60px }
+
+    &__container {
+        width: calc(100% - 66px);
+        @media (max-width: 450px) { width: calc(100% - 30px) }
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 44px;
+    }
+        
+    &__table {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        flex-wrap: wrap;
+
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto 100px;
+
+        @media (max-width: 575px) {
+            margin: 0 auto 44px;
+        }
+
+        &-item {
+            padding: 0 20px;
+            margin: 0 auto;
+            height: auto;
+
+            @media (max-width: 1200px) { padding: 15px 20px }
+        }
+
+        @media (max-width: 768px) {
+            &-item {
+                padding: 10px 10px;
+
+                &--1 {
+                    width: 132px;
+                    order: 4;
+                }
+                &--2 {
+                    width: 152px;
+                    order: 3;
+                }
+                &--3 {
+                    width: 178px;
+                    order: 7;
+                }
+                &--4 {
+                    padding: 10px 22px 10px 0;
+                    width: 240px;
+                    order: 1;
+                }
+                &--5 {
+                    width: 171px;
+                    order: 9;
+                }
+                &--6 {
+                    width: 148px;
+                    order: 11;
+                }
+                &--7 {
+                    width: 98px;
+                    order: 10;
+                }
+                &--8 {
+                    width: 106px;
+                    order: 6;
+                }
+                &--9 {
+                    width: 116px;
+                    order: 8;
+                }
+                &--10 {
+                    width: 148px;
+                    order: 5;
+                }
+                &--11 {
+                    width: 165px;
+                    order: 2;
+                }
+            }
+        }
+
+        @media (max-width: 575px) {
+            &-item {
+                &--8 { order: 5 }
+                &--10 { order: 6 }
+                &--7 { order: 9 }
+                &--5 { order: 10 }
+            }
+        }
+
+        @media (max-width: 450px) {
+            &-item {
+                &--4 { padding: 10px 0 10px 0 }
+            }
+        }
+    }
+
+    .g-btn {
+        padding: 30px 40px;
+
+        @media (max-width: 600px) { 
+            width: 100%;
+            padding: 30px 0;
+        }
+        
+        @media (max-width: 575px) {
+            width: calc(100% - 30px);
+            padding: 20px 15px;
+            font-size: 20px;
+        }
+    }
+}
