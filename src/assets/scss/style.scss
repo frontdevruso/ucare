@@ -1,0 +1,49 @@
+@import "vars";
+@import "mixins";
+
+html { scroll-behavior: smooth }
+
+body {
+    font-weight: 400;
+    font-size: 20px;
+    font-family: 'GothamPro', sans-serif;
+    
+    min-width: 320px;
+    overflow: auto;
+
+    color: $mattBlack;
+}
+
+.m-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+
+    @media (max-width: 1300px) { 
+        overflow: hidden;
+        position: fixed;
+
+        .header {
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            z-index: 50;
+            top: 0;
+
+            .menu { display: flex }
+        }
+    }
+}
+
+@import 'fonts';
+@import 'global';
+
+@import "./limbs/header.scss";
+@import "./limbs/footer.scss";
+
+@import "./blocks/resources.scss";
+@import "./blocks/preview.scss";
+@import "./blocks/retail.scss";
+@import "./blocks/about.scss";
+@import "./blocks/products.scss";
