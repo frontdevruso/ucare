@@ -71,6 +71,24 @@ h2 {
     overflow: hidden;
 }
 
+.g-btn {
+    color: white;
+    background-color: $aragonGreen;
+    padding: 30px 50px;
+
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: .4s;
+
+    font-weight: 700;
+    font-size: 24px;
+
+    width: fit-content;
+    margin: 0 auto;
+
+    &:hover { background-color: #309D69 }
+}
+
 .lozad--disabled {
     opacity: 0;
     transition: .4s;

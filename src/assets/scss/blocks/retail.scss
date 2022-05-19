@@ -51,6 +51,41 @@
 
                 color: white;
                 text-align: center;
+
+                a {
+                    color: #FFD700;
+                    transition: .4s;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: #D9B700;
+                    }
+                }
+            }
+        }
+    }
+
+    &--manufacturers {
+        background-image: url('./../images/svg/retail-bg--manufactures.svg');
+        background-size: 2800px 977px;
+        height: 977px;
+        
+        margin-bottom: 110px;
+        
+        h2 { color: $mattBlack }
+
+        ul {
+            li {
+                background-color: #FFDA58;
+                box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1);
+
+                p {
+                    color: $mattBlack;
+                    a {
+                        color: $franceBlue;
+                        &:hover { color: #0c53a5 }
+                    }
+                }
             }
         }
     }
