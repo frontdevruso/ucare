@@ -1,0 +1,67 @@
+.policy {
+    .container__1110px {
+        width: calc(100% - 66px);
+        @media (max-width: 450px) { width: calc(100% - 30px) }
+    }
+    
+    header {
+        padding: 32px 0;
+        background-color: $londonRain;
+        @media (max-width: 450px) { padding: 20px 0 }
+
+        a {
+            width: fit-content;
+
+            display: flex;
+            align-items: center;
+
+            svg {
+                width: 24px;
+                height: 24px;
+
+                margin-right: 8px;
+                fill: white;
+            }
+
+            span {
+                color: white;
+                font-size: 24px;
+            }
+        }
+    }
+
+    main {
+        padding: 80px 0;
+        @media (max-width: 450px) { padding: 50px 0 }
+
+        h3 {
+            color: $londonRain;
+            font-size: 24px;
+
+            line-height: 130%;
+            margin-bottom: 40px;
+
+            @media (max-width: 450px) {
+                font-size: 20px;
+                margin-bottom: 25px;
+            }
+        }
+
+        p {
+            color: #606060;
+            line-height: 140%;
+            font-size: 16px;
+
+            span {
+                font-weight: 700;
+            }
+
+            a {
+                transition: .4s;
+                color: $londonRain;
+
+                &:hover { color: $franceBlue }
+            }
+        }
+    }
+}

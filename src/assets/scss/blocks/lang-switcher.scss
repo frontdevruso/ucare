@@ -1,0 +1,88 @@
+.lang-switcher {
+    position: relative;
+    width: 70px;
+
+    @media (max-width: 1024px) { 
+        margin-right: 46px;
+        margin-left: auto;
+    }
+
+    @media (max-width: 575px) {
+        margin-right: 20px;
+    }
+
+    main {
+        display: flex;
+        align-items: center;
+        cursor: default;
+
+        svg {
+            width: 24px;
+            height: 24px;
+
+            margin-right: 10px;
+            fill: white;
+            
+            @media (max-width: 768px) { fill: $mattBlack }
+        }
+
+        span {
+            color: white;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            
+            @media (max-width: 768px) { 
+                color: $mattBlack;
+            }
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        position: absolute;
+        top: -4px;
+        right: -6px;
+
+        padding: 4px 0;
+        overflow: hidden;
+        transition: .4s;
+
+        z-index: -1;
+        opacity: 0;
+
+        background-color: white;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 8px;
+
+        button {
+            background-color: transparent;
+            padding: 4.5px 6px;
+
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 15px;
+
+            color: $londonRain;
+            transition: .4s;
+
+            &.active {
+                color: white;
+                background-color: $londonRain;
+
+                &:hover { color: white }
+            }
+
+            &:hover { color: $franceBlue }
+        }
+    }
+
+    &:hover {
+        form {
+            z-index: 10;
+            opacity: 1;
+        }
+    }
+}

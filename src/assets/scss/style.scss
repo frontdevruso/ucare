@@ -14,25 +14,42 @@ body {
     color: $mattBlack;
 }
 
+.m-hidden {
+    overflow: hidden;
+}
+
 .m-open {
     overflow: hidden;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
 
-    @media (max-width: 1300px) { 
+    .page {
         overflow: hidden;
+    }
+
+    .header {
         position: fixed;
+        top: 0;
 
-        .header {
-            height: 100vh;
-            width: 100%;
-            position: fixed;
-            z-index: 50;
-            top: 0;
+        .header__container {
+            background-color: white;
+            .header__nav-logo {
+                .logo-dark { display: block }
+                .logo-light { display: none }
 
-            .menu { display: flex }
+                @media (max-width: 575px) {
+                    .logo-dark { display: none }
+                    .logo-big { display: block }
+                }
+            }
+            .burger { --lines-color: #151515 }
+            .lang-switcher {
+                span { color: $mattBlack }
+                svg { fill: $mattBlack }
+            }
         }
+    }
+
+    .menu {
+        transform: translateX(0);
     }
 }
 
@@ -51,3 +68,10 @@ body {
 @import "./blocks/stores.scss";
 @import "./blocks/partners.scss";
 @import "./blocks/become-partner.scss";
+@import "./blocks/lang-switcher.scss";
+@import "./blocks/policy.scss";
+@import "./blocks/burger.scss";
+@import "./blocks/menu.scss";
+@import "./blocks/modal.scss";
+@import "./blocks/contact-form.scss";
+@import "./blocks/select-box.scss";

@@ -82,6 +82,10 @@ h2 {
 .page { 
     position: relative; 
     overflow: hidden;
+
+    @media (max-width: 768px) {
+        padding-top: 88px;
+    }
 }
 
 .g-btn {
@@ -103,6 +107,38 @@ h2 {
     margin: 0 auto;
 
     &:hover { background-color: #309D69 }
+}
+
+.g-input {
+    width: 100%;
+    display: flex;
+
+    input {
+        width: 100%;
+        padding: 20px 12px;
+        line-height: 0.9;
+
+        background: #E9E9E9;
+        border: 1px solid #C4C4C4;
+        border-radius: 10px;
+
+        font-weight: 300;
+        font-size: 16px;
+
+        transition: .4s;
+        &::placeholder { transition: .2s }
+        
+        &:focus {
+            &::placeholder { transition: .3s }
+            &::placeholder { opacity: 0 }
+        }
+    }
+}
+
+.g-input-error {
+    input {
+        border-color: #C3161C;
+    }
 }
 
 .lozad--disabled {

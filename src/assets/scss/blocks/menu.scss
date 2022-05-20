@@ -1,0 +1,42 @@
+.menu {
+    position: fixed;
+    height: calc(100% - 88px);
+    right: 0;
+    z-index: 70;
+
+    display: flex;
+    background-color: white;
+    color: $mattBlack;
+
+    width: 60%;
+    padding: 23px 0;
+    transition: .4s;
+
+    transform: translateX(100%);
+    @media (min-width: 1024px) { display: none }
+    @media (max-width: 450px) { width: 80% }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        overflow-y: scroll;
+
+        a {
+            width: 100%;
+
+            color: $mattBlack;
+            padding: 15px 0 15px 34px;
+            transition: .4s;
+
+            font-size: 14px;
+            font-weight: 400;
+
+            &:hover {
+                background-color: #F7F7F7;
+                font-weight: 700;
+            }
+        }
+    }
+}

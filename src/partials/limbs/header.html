@@ -1,5 +1,41 @@
 <header class="header">
-    <div class="header__container">
-        
+    <div class="header__container container__1110px">
+        <nav class="header__nav">
+            <a href="#" class="header__nav-logo">
+                <img class="logo-light" src="./assets/images/svg/logo-light.svg" alt="logo-light">
+                <img class="logo-dark" src="./assets/images/svg/logo-dark.svg" alt="logo-dark">
+                <img class="logo-big" src="./assets/images/svg/logo-big.svg" alt="logo-big">
+            </a>
+            <ul>
+                <a href="#">О проекте</a>
+                <a href="#">Для ритейла</a>
+                <a href="#">Для производителей</a>
+                <a href="#">Партнеры</a>
+                <a href="#">Контакты</a>
+            </ul>
+            <div class="lang-switcher" data-language-switcher="en">
+                <main>
+                    <svg><use xlink:href="./assets/images/svg/sprite.svg#languageIcon"></use></svg>
+                    <span>Eng</span>
+                </main>
+                <form action="/">
+                    <button class="active" type="button" data-language-item="en" data-language-text="ENG">ENG</button>
+                    <button type="button" data-language-item="ua" data-language-text="UKR">UKR</button>
+                </form>
+            </div>
+            <button class="btn-reset burger" aria-label="Бургер меню">
+                <span></span>
+                <svg></svg>
+            </button>
+        </nav>
+    </div>
+    <div class="menu">
+        <ul>
+            <a href="#">О проекте</a>
+            <a href="#">Для ритейла</a>
+            <a href="#">Для производителей</a>
+            <a href="#">Партнеры</a>
+            <a href="#">Контакты</a>
+        </ul>
     </div>
 </header>

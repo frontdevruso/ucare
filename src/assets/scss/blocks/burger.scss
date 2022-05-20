@@ -1,0 +1,76 @@
+:root {
+    --lines-burger: 40px;
+    --lines-color: white;
+
+    @media (max-width: 768px) {
+        --lines-color: #151515;
+    }
+}
+
+.burger {
+    display: none;
+    position: relative;
+    width: 40px;
+    height: 100%;
+    background-color: transparent;
+    overflow: hidden;
+    transition: transform 0.5s;
+
+    padding: 0;
+
+    @media (max-width: 1024px) { display: flex }
+
+    span {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: var(--lines-burger);
+        height: 4px;
+        transform: translate(-50%, -50%);
+        transition: transform 0.5s;
+        background-color: var(--lines-color);
+
+        &:before, &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: var(--lines-burger);
+            height: 4px;
+            transform: translateY(-14px);
+            transition: transform 0.5s, width 0.5s;
+            background-color: var(--lines-color);
+            transform-origin: 50% 50%;
+        }
+
+        &:after {
+            left: auto;
+            right: 0;
+            transform: translateY(14px);
+        }
+    }
+
+    svg {
+        width: 40px;
+        height: 40px;
+        fill: transparent;
+        stroke-width: 2px;
+    }
+
+    &.isOpen {
+        transform: rotate(180deg);
+
+        span { background: transparent }
+        span:before { transform: translateY(0) rotate(45deg) }
+        span:after {
+            width: var(--lines-burger);
+            left: 0;
+            transform: translateY(0) rotate(-45deg);
+        }
+
+        &:hover {
+            svg { fill: rgba(#fff, 0.1) }
+        }
+    }
+}

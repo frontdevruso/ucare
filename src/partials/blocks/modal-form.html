@@ -1,0 +1,88 @@
+<div class="modal modal--form">
+    <div class="modal__container">
+        <button class="modal-close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeIcon"></use></svg></button>
+        <h2 class="modal-title">Подать заявку</h2>
+        <section class="contact-form contact-form--modal">
+            <div class="contact-form__container">
+                <form id="contactForm" class="contact-form__wrapper-form" action="/">
+                    <header>
+                        <div class="g-input">
+                            <input autocomplete="off" type="text" data-validate-field="name" placeholder="Имя" required>
+                        </div>
+                        <div class="g-input">
+                            <input autocomplete="off" type="text" data-validate-field="surname" placeholder="Фамилия" required>
+                        </div>
+                        <div class="g-input">
+                            <input autocomplete="off" type="text" data-validate-field="org" placeholder="Организация" required>
+                        </div>
+                        <div class="g-input">
+                            <input autocomplete="off" type="text" data-validate-field="social" placeholder="Сайт или инстаграм" required>
+                        </div>
+                        <div class="g-input">
+                            <input autocomplete="off" type="email" data-validate-field="mail" placeholder="E-mail" required>
+                        </div>
+                        <div class="g-input">
+                            <input autocomplete="off" type="tel" data-validate-field="tel" placeholder="Телефон" required>
+                        </div>
+                        <div class="g-input">
+                            <input autocomplete="off" type="text" data-validate-field="country" placeholder="Страна" required>
+                        </div>
+                        <div class="select-box" id="selectBoxForm">
+                            <div class="options-container" id="optionsContainer">
+                        
+                                <div class="option">
+                                    <input type="radio" class="radio" id="web-1" name="category" />
+                                    <label for="web-1">Сеть 1</label>
+                                </div>
+                        
+                                <div class="option">
+                                    <input type="radio" class="radio" id="web-2" name="category" />
+                                    <label for="web-2">Сеть 2</label>
+                                </div>
+                        
+                                <div class="option">
+                                    <input type="radio" class="radio" id="web-3" name="category" />
+                                    <label for="web-3">Сеть 3</label>
+                                </div>
+                        
+                                <div class="option">
+                                    <input type="radio" class="radio" id="web-4" name="category" />
+                                    <label for="web-4">Сеть 4</label>
+                                </div>
+                        
+                                <div class="option">
+                                    <input type="radio" class="radio" id="web-5" name="category" />
+                                    <label for="web-5">Сеть 5</label>
+                                </div>
+                            </div>
+                    
+                            <div class="select-box-current" id="selectBoxCurrent">Сеть</div>
+
+                            <svg class="select-box-arrow" id="selectBoxArrow" viewBox="0 0 13 8" fill="#A6A6A6" >
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.79998 6.66669L13 1.33333L11.7 -3.45862e-08L6.49999 5.33336L1.3 2.80766e-05L-2.91408e-07 1.33336L6.50001 8L5.20002 6.66667L6.49999 5.33336L7.79998 6.66669Z"/>
+                                <path d="M5.20002 6.66667L6.50001 8L7.79998 6.66669L6.49999 5.33336L5.20002 6.66667Z" />
+                            </svg>  
+                        </div>
+                    </header>
+    
+                    <footer>
+                        <div class="contact-form__wrapper-form-files">
+                            <main>
+                                <img src="./assets/images/svg/clip-icon.svg" alt="clip-form">
+                                <input type="file" name="file" accept=".pdf, .jpg, .png, .ppt, .doc, .xls" id="upload" multiple="">
+                            </main>
+                            <p>Прикрепить презентацию и прайс-лист (форматы: pdf, jpg, png, ppt, doc, xls. Не больше 30мб, количеством не более 20 файлов)</p>
+                        </div>
+                        <div class="contact-form__wrapper-form-policy">
+                            <input id="policyCheckbox" type="checkbox" data-validate-field="checkbox">
+                            <label for="policyCheckbox" id="policyCheckboxWrapper">
+                                <p>Даю согласие на обработку данных согласно <a href="./policy.html">политике</a></p>
+                            </label>
+                          </div>
+                        <button class="contact-form-submit g-btn" type="submit">ПОДАТЬ ЗАЯВКУ</button>
+                    </footer>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
