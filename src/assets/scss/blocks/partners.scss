@@ -52,7 +52,10 @@
                     height: 346px;
                 }
 
-                @media (max-width: 575px) { width: 50px }
+                @media (max-width: 575px) {
+                    background: linear-gradient(270deg, #FFFFFF 50%, rgba(255, 255, 255, 0) 100%);
+                    width: 50px;
+                }
             }
 
             &::before {

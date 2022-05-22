@@ -39,6 +39,10 @@
 
                 &:not(:last-child) { margin-bottom: 32px }
 
+                @media (max-width: 768px) {
+                    &:not(:last-child) { margin-bottom: 12px }
+                }
+
                 img {
                     width: 100%;
                     height: auto;
