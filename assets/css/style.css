@@ -702,6 +702,9 @@ h2 {
         position: relative; }
         .products main ul li:not(:last-child) {
           margin-bottom: 32px; }
+        @media (max-width: 768px) {
+          .products main ul li:not(:last-child) {
+            margin-bottom: 12px; } }
         .products main ul li img {
           width: 100%;
           height: auto; }
@@ -947,6 +950,7 @@ h2 {
           height: 346px; } }
       @media (max-width: 575px) {
         .partners__container .partners__slider::after, .partners__container .partners__slider::before {
+          background: linear-gradient(270deg, #FFFFFF 50%, rgba(255, 255, 255, 0) 100%);
           width: 50px; } }
     .partners__container .partners__slider::before {
       transform: rotate(0) translateY(-50%);
@@ -1424,8 +1428,41 @@ h2 {
   display: flex;
   align-items: center;
   padding: 25px 33px;
-  border-radius: 10px;
-  margin-bottom: 42px; }
+  border-radius: 10px; }
+  .contact-form__wrapper-form-files-preview {
+    margin-bottom: 42px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; }
+    .contact-form__wrapper-form-files-preview li {
+      background-color: #FFF1CB;
+      border-radius: 4px;
+      padding: 8px 10px;
+      margin-top: 8px;
+      display: flex;
+      align-items: center; }
+      .contact-form__wrapper-form-files-preview li:not(:last-child) {
+        margin-right: 5px; }
+      .contact-form__wrapper-form-files-preview li button {
+        padding: 0;
+        background-color: transparent;
+        display: flex;
+        width: fit-content;
+        height: fit-content; }
+        .contact-form__wrapper-form-files-preview li button svg {
+          width: 15px;
+          height: 15px;
+          margin-right: 4px;
+          transition: .4s; }
+        .contact-form__wrapper-form-files-preview li button:hover svg {
+          transform: rotate(90deg); }
+      .contact-form__wrapper-form-files-preview li span {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 130%; }
+    @media (max-width: 500px) {
+      .contact-form__wrapper-form-files-preview {
+        margin-bottom: 20px; } }
   .contact-form__wrapper-form-files main {
     display: flex;
     position: relative;
@@ -1450,7 +1487,6 @@ h2 {
     max-width: 552px; }
   @media (max-width: 500px) {
     .contact-form__wrapper-form-files {
-      margin-bottom: 20px;
       padding: 20px 25px;
       flex-direction: column; }
       .contact-form__wrapper-form-files main {

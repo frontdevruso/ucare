@@ -111,6 +111,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     }, 200);
                 }
             });
+
+
+            // SELECT-BOX
             
             const selected = document.getElementById("selectBoxCurrent");
             const optionsContainer = document.getElementById("optionsContainer");
@@ -139,6 +142,73 @@ document.addEventListener("DOMContentLoaded", () => {
                     selectArrow.classList.remove("select-box-arrow-opened");
                 });
             });
+
+
+            // INPUT TYPE="FILE"
+
+            const inputFile = document.querySelector('.contact-form__wrapper-form-files main input');
+            const allFiles = [];
+            let allFileSize = 0;
+
+            inputFile.addEventListener('change', function() {
+                if (inputFile.files[0]) {
+                    if (inputFile.files[0].size > 5 * 1024 * 1024) {
+                        alert('Ваш файл должен весить меншье 5 МБ!');
+                        return;
+                    } else if ((allFiles.length + 1) > 20) {
+                        alert('Вы не можете добавить больше 20 файлов');
+                        return;
+                    } else if (!['image/jpeg', 'image/jpg', 'image/png', 'application/vnd.ms-excel', 'application/pdf', ''].includes(inputFile.files[0].type)) {
+                        alert('Вы можете прикрепить только такие форматы: pdf, jpg, png, ppt, doc, xls.');
+                        return;
+                    } else {
+                        allFiles.push(inputFile.files[0]);
+                        allFiles.forEach(function(eachitem) {
+                            allFileSize += eachitem.size;
+                        })
+                    }
+                }
+                
+                if (allFileSize > 30 * 1024 * 1024) {
+                    alert('Ваши файлы должен весить меншье 30 МБ');
+                    return;
+                }
+
+                uploadFile(inputFile.files[0]);
+                showingFiles(inputFile.files[0].name);
+                deletingFiles();
+            });
+
+            function uploadFile(file) {
+                var reader = new FileReader();
+
+                reader.onerror = function(e) { alert('Ошибка') }
+                reader.readAsDataURL(file);
+            }
+
+            function showingFiles(fileName) {
+                const filesContainer = document.querySelector('.contact-form__wrapper-form-files-preview');
+                filesContainer.innerHTML +=
+                `<li>` +
+                    `<button data-file-name="${fileName}" type="button"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeIcon"></use></svg></button>` +
+                    `<span>${fileName}</span>` +
+                `</li>`
+            }
+
+            function deletingFiles() {
+                let allpreviewFiles = document.querySelectorAll('.contact-form__wrapper-form-files-preview li');
+                allpreviewFiles.forEach(function(item) {
+                    item.querySelector('button').addEventListener('click', function() {
+                        const fileName = this.getAttribute('data-file-name');
+
+                        allFiles.forEach(function(arrayFiles, index) {
+                            if(arrayFiles.name === fileName) { allFiles.splice(index) }
+                        }); 
+
+                        item.remove();
+                    });
+                });
+            }
         })
     }
 });
