@@ -291,6 +291,11 @@ if(document.querySelector('.partners__slider')) {
         grabCursor: true,
         centeredSlides: true,
         loop: true,
+          
+        navigation: {
+            nextEl: ".partners__slider--next",
+            prevEl: ".partners__slider--prev",
+        },
     });
 }
 
