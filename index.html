@@ -48,8 +48,9 @@
                         <span>Eng</span>
                     </main>
                     <form action="/">
-                        <button class="active" type="button" data-language-item="en" data-language-text="ENG">ENG</button>
-                        <button type="button" data-language-item="ua" data-language-text="UKR">UKR</button>
+                        <a href="#" class="active" type="button" data-language-item="en" data-language-text="ENG">ENG</a>
+                        <a href="#" type="button" data-language-item="ua" data-language-text="UKR">UKR</a>
+                        <a href="#" type="button" data-language-item="ru" data-language-text="RUS">RUS</a>
                     </form>
                 </div>
                 <button class="btn-reset burger" aria-label="Бургер меню">
@@ -137,7 +138,7 @@
                     </li>
                     <li>
                         <svg><use xlink:href="./assets/images/svg/sprite.svg#retailIcon-4"></use></svg>
-                        <p>Предоставим бесплатную сквозную white label платформу, дающую возможность вести как открытые, так и закрытые торги на продажу или закупку товаров со всеми украинскими компаниями зарегистрированными на платформе <a href="#">www.foodtechshelf.com</a></p>
+                        <p>Предоставим бесплатную сквозную white label платформу, дающую возможность вести как открытые, так и закрытые торги на продажу или закупку товаров со всеми украинскими компаниями зарегистрированными на платформе <a href="http://www.foodtechshelf.com">www.foodtechshelf.com</a></p>
                     </li>
                 </ul>
             </div>
@@ -187,7 +188,7 @@
                     <img class="stores__table-item stores__table-item--10" src="./assets/images/svg/stores-10.svg" alt="stores">
                     <img class="stores__table-item stores__table-item--11" src="./assets/images/svg/stores-11.svg" alt="stores">
                 </div>
-                <a href="#" class="g-btn open-modal-form form-title">Создать украинскую полку</a>
+                <a href="#" class="g-btn open-regular-modal-form">Создать украинскую полку</a>
             </div>
         </section>
         
@@ -201,7 +202,7 @@
                     </li>
                     <li>
                         <svg><use xlink:href="./assets/images/svg/sprite.svg#retailManufacturesIcon-2"></use></svg>
-                        <p>Быстрый выход на зарубежные рынки и возможность вести сделки с торговыми партнерами со всего мира размещая торги на международной торговой платформе <a href="#">www.foodtechshelf.com</a></p>
+                        <p>Быстрый выход на зарубежные рынки и возможность вести сделки с торговыми партнерами со всего мира размещая торги на международной торговой платформе <a href="http://www.foodtechshelf.com">www.foodtechshelf.com</a></p>
                     </li>
                     <li>
                         <svg><use xlink:href="./assets/images/svg/sprite.svg#retailManufacturesIcon-3"></use></svg>
@@ -277,7 +278,7 @@
             </div>
         </section>
         
-        <section class="become-partner">
+        <section class="become-partner lozad" data-background-image="./assets/images/become-partner-bg.png" data-background-image-set="./assets/images/become-partner-bg@2x.png">
             <div class="become-partner__container container__1110px">
                 <ul>
                     <li>
@@ -310,7 +311,13 @@
                         </p>
                         <p>
                             Part of <b><a href="#">Bestseller.company</a></b><br>
-                            EU USA UA RU KZ BY CHI
+                            <small><a href="#">EU</a></small>
+                            <small><a href="#">USA</a></small>
+                            <small><a href="#">UA</a></small>
+                            <small><a href="#">RU</a></small>
+                            <small><a href="#">KZ</a></small>
+                            <small><a href="#">BY</a></small>
+                            <small><a href="#">CHI</a></small>
                         </p>
                     </main>
                 </div>
@@ -410,7 +417,7 @@
                             <div class="contact-form__wrapper-form-files">
                                 <main>
                                     <img src="./assets/images/svg/clip-icon.svg" alt="clip-form">
-                                    <input type="file" name="file" accept=".pdf, .jpg, .png, .ppt, .doc, .xls" id="upload" multiple="">
+                                    <input type="file" name="file" accept=".pdf, .jpg, .png, .ppt, .doc, .xls" id="upload" multiple="" data-validate-field="file">
                                 </main>
                                 <p>Прикрепить презентацию и прайс-лист (форматы: pdf, jpg, png, ppt, doc, xls. Не больше 30мб, количеством не более 20 файлов)</p>
                             </div>
@@ -418,6 +425,51 @@
                             <div class="contact-form__wrapper-form-policy">
                                 <input id="policyCheckbox" type="checkbox" data-validate-field="checkbox">
                                 <label for="policyCheckbox" id="policyCheckboxWrapper">
+                                    <p>Даю согласие на обработку данных согласно <a href="./policy.html">политике</a></p>
+                                </label>
+                              </div>
+                            <button class="contact-form-submit g-btn" type="submit">ПОДАТЬ ЗАЯВКУ</button>
+                        </footer>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>    
+    <div class="modal modal--form-regular">
+        <div class="modal__container">
+            <button class="modal-close"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeIcon"></use></svg></button>
+            <h2 class="modal-title">Создать украинскую полку</h2>
+            <section class="contact-form contact-form--modal">
+                <div class="contact-form__container">
+                    <form id="contactForm" class="contact-form__wrapper-form" action="/">
+                        <header>
+                            <div class="g-input">
+                                <input autocomplete="off" type="text" data-validate-field="name" placeholder="Имя" required>
+                            </div>
+                            <div class="g-input">
+                                <input autocomplete="off" type="text" data-validate-field="surname" placeholder="Фамилия" required>
+                            </div>
+                            <div class="g-input">
+                                <input autocomplete="off" type="text" data-validate-field="org" placeholder="Организация" required>
+                            </div>
+                            <div class="g-input">
+                                <input autocomplete="off" type="text" data-validate-field="social" placeholder="Сайт или инстаграм" required>
+                            </div>
+                            <div class="g-input">
+                                <input autocomplete="off" type="email" data-validate-field="mail" placeholder="E-mail" required>
+                            </div>
+                            <div class="g-input">
+                                <input autocomplete="off" type="tel" data-validate-field="tel" placeholder="Телефон" required>
+                            </div>
+                            <div class="g-input">
+                                <input autocomplete="off" type="text" data-validate-field="country" placeholder="Страна" required>
+                            </div>
+                        </header>
+        
+                        <footer>
+                            <div class="contact-form__wrapper-form-policy">
+                                <input id="policyCheckboxRegular" type="checkbox" data-validate-field="checkbox">
+                                <label for="policyCheckboxRegular" id="policyCheckboxRegularWrapper">
                                     <p>Даю согласие на обработку данных согласно <a href="./policy.html">политике</a></p>
                                 </label>
                               </div>
