@@ -68,7 +68,14 @@
                 }
 
                 b { font-weight: 400 }
-                          
+                
+                small {
+                    a {
+                        text-decoration: none;
+                        &:hover { text-decoration: underline } 
+                    }
+                }
+                
                 @media (max-width: 500px) {
                     text-align: center;
                     font-size: 16px;

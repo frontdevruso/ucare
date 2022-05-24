@@ -1,6 +1,7 @@
 if(document.querySelector('.modal')) {
     const modalWindow = document.querySelectorAll('.modal');
     const modalOpenBtns = document.querySelectorAll('.open-modal-form');
+    const modalOpenRegularFormBtn = document.querySelector('.open-regular-modal-form');
 
     modalWindow.forEach(function(item) {
         if(item.querySelector('.modal-close')) {
@@ -23,4 +24,8 @@ if(document.querySelector('.modal')) {
             document.querySelector('.modal--form').classList.add('modal--open');
         });
     })
+
+    modalOpenRegularFormBtn.addEventListener('click', function() {
+        document.querySelector('.modal--form-regular').classList.add('modal--open');
+    });
 }

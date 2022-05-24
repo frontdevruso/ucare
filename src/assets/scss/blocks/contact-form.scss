@@ -105,6 +105,37 @@
     padding: 25px 33px;
     border-radius: 10px;
 
+    &::after {
+        content: "";
+        display: block;
+        opacity: 0;
+        transition: .4s opacity;
+        height: 0;
+    }
+
+    &.file-input-error {
+        position: relative;
+        margin-bottom: 20px;
+
+        &::after {
+            content: "Добовление файла обязательно!";
+            display: block;
+            height: 16px;
+
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            transform: translateY(150%);
+            transition: .4s opacity;
+
+            opacity: 1;
+            overflow: hidden;
+            color: #C3161C;
+            font-size: 16px;
+        }
+    }
+
+
     &-preview {
         margin-bottom: 42px;
 
@@ -191,7 +222,7 @@
 
         max-width: 552px;
     }
-
+    
     @media (max-width: 500px) {
         padding: 20px 25px;
         flex-direction: column;

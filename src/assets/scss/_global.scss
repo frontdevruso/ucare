@@ -83,8 +83,9 @@ h2 {
     position: relative; 
     overflow: hidden;
 
-    @media (max-width: 768px) {
-        padding-top: 88px;
+    @media (max-width: 768px) { padding-top: 88px }
+    &--policy {
+        @media (max-width: 768px) { padding-top: 0 }
     }
 }
 

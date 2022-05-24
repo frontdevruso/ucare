@@ -1,6 +1,5 @@
 .become-partner {
     height: 736px;
-    background-image: url('./../images/become-partner-bg.png');
     background-size: 1920px 736px;
     background-position: 50% 100%;
     background-repeat: no-repeat;
@@ -9,7 +8,7 @@
 
     @media (max-width: 992px) {
         margin-bottom: initial;
-        background-image: none;
+        background-image: none !important;
         height: auto;
 
         margin-bottom: 44px;

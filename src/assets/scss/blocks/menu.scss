@@ -4,7 +4,7 @@
     right: 0;
     z-index: 70;
 
-    display: flex;
+    display: none;
     background-color: white;
     color: $mattBlack;
 
@@ -13,7 +13,7 @@
     transition: .4s;
 
     transform: translateX(100%);
-    @media (min-width: 1024px) { display: none }
+    @media (max-width: 1024px) { display: flex }
     @media (max-width: 450px) { width: 80% }
 
     ul {
@@ -22,6 +22,7 @@
         width: 100%;
 
         overflow-y: scroll;
+        overflow-x: hidden;
 
         a {
             width: 100%;
