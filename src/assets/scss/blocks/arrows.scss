@@ -5,6 +5,7 @@
 
     padding: 0 187px;
     @media (max-width: 1024px) { padding: 0 30px }
+    @media (max-width: 575px) { padding: 0 }
 
     &-item {
         position: relative;
