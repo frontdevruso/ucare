@@ -15,6 +15,8 @@
             display: flex;
             align-items: center;
 
+            & > * { transition: .4s }
+
             svg {
                 width: 24px;
                 height: 24px;
@@ -26,6 +28,11 @@
             span {
                 color: white;
                 font-size: 24px;
+            }
+
+            &:hover {
+                span { color: $yellow }
+                svg { fill: $yellow }
             }
         }
     }
