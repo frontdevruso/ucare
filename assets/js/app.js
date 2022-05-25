@@ -316,8 +316,9 @@ if(document.querySelector('.modal')) {
             document.querySelector('.modal--form').classList.add('modal--open');
         });
     })
-
+    
     modalOpenRegularFormBtn.addEventListener('click', function() {
+        document.querySelector('body').classList.add('m-hidden');
         document.querySelector('.modal--form-regular').classList.add('modal--open');
     });
 }

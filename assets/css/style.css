@@ -287,7 +287,8 @@ h2 {
           display: none; } }
       .header__nav ul a {
         color: white;
-        font-size: 14px; }
+        font-size: 14px;
+        transition: .4s; }
         .header__nav ul a:hover {
           font-weight: 700; }
         @media (max-width: 768px) {
@@ -1109,6 +1110,7 @@ h2 {
     .lang-switcher main svg {
       width: 24px;
       height: 24px;
+      transition: .4s;
       margin-right: 10px;
       fill: white; }
       @media (max-width: 768px) {
@@ -1118,7 +1120,8 @@ h2 {
       color: white;
       font-weight: 700;
       font-size: 16px;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      transition: .4s; }
       @media (max-width: 768px) {
         .lang-switcher main span {
           color: #151515; } }
@@ -1174,6 +1177,8 @@ h2 {
     width: fit-content;
     display: flex;
     align-items: center; }
+    .policy header a > * {
+      transition: .4s; }
     .policy header a svg {
       width: 24px;
       height: 24px;
@@ -1182,6 +1187,10 @@ h2 {
     .policy header a span {
       color: white;
       font-size: 24px; }
+    .policy header a:hover span {
+      color: #FFD700; }
+    .policy header a:hover svg {
+      fill: #FFD700; }
 
 .policy main {
   padding: 80px 0; }
