@@ -7,11 +7,35 @@
     width: 100%;
     transition: .4s;
 
-    @media (max-width: 768px) {
-        position: fixed;
-        top: 0;
+    position: fixed;
+    top: 0;
 
+    @media (max-width: 768px) { box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.25) }
+
+    &--floating {
         box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.25);
+        background-color: white;
+
+        .header__nav {
+            ul {
+                a { color: $mattBlack }
+            }
+
+            &-logo {
+                .logo-dark { display: block }
+                .logo-light { display: none }
+    
+                @media (max-width: 575px) {
+                    .logo-dark { display: none }
+                    .logo-big { display: block }
+                }
+            }
+        }
+        .burger { --lines-color: #151515 }
+        .lang-switcher {
+            span { color: $mattBlack }
+            svg { fill: $mattBlack }
+        }
     }
 
     &__container {
