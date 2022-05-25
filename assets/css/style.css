@@ -214,12 +214,32 @@ h2 {
   top: 0;
   z-index: 50;
   width: 100%;
-  transition: .4s; }
+  transition: .4s;
+  position: fixed;
+  top: 0; }
   @media (max-width: 768px) {
     .header {
-      position: fixed;
-      top: 0;
       box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.25); } }
+  .header--floating {
+    box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.25);
+    background-color: white; }
+    .header--floating .header__nav ul a {
+      color: #151515; }
+    .header--floating .header__nav-logo .logo-dark {
+      display: block; }
+    .header--floating .header__nav-logo .logo-light {
+      display: none; }
+    @media (max-width: 575px) {
+      .header--floating .header__nav-logo .logo-dark {
+        display: none; }
+      .header--floating .header__nav-logo .logo-big {
+        display: block; } }
+    .header--floating .burger {
+      --lines-color: #151515 ; }
+    .header--floating .lang-switcher span {
+      color: #151515; }
+    .header--floating .lang-switcher svg {
+      fill: #151515; }
   .header__container {
     width: calc(100% - 66px);
     z-index: 75; }
