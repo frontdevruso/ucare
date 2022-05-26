@@ -968,7 +968,9 @@ h2 {
       border-radius: 30px;
       display: flex;
       align-items: center;
-      justify-content: center; }
+      justify-content: center;
+      padding: 15px 30px;
+      box-sizing: border-box; }
       .partners__container .partners__slider-item img {
         max-width: 100%;
         width: auto;
