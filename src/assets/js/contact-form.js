@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const formCountry = form.querySelector('[data-validate-field="country"]');
             const formMail = form.querySelector('[data-validate-field="mail"]');
             const formFile = form.querySelector('[data-validate-field="file"]');
-
-            const formCheckbox = document.querySelector('[data-validate-field="checkbox"]');
+            
+            const formCheckbox = form.querySelector('[data-validate-field="checkbox"]');
         
             const formAllInput = form.querySelectorAll('[data-validate-field]');
             const contactFormSubmitBtn = form.querySelector('.contact-form-submit');
