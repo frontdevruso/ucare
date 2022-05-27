@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html {
   scroll-behavior: smooth; }
 
@@ -1488,28 +1487,19 @@ h2 {
   align-items: center;
   padding: 25px 33px;
   border-radius: 10px; }
-  .contact-form__wrapper-form-files::after {
-    content: "";
+  .contact-form__wrapper-form-files-error {
     display: block;
+    transition: .4s;
     opacity: 0;
-    transition: .4s opacity;
-    height: 0; }
-  .contact-form__wrapper-form-files.file-input-error {
-    position: relative;
-    margin-bottom: 20px; }
-    .contact-form__wrapper-form-files.file-input-error::after {
-      content: "Добовление файла обязательно!";
-      display: block;
-      height: 16px;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      transform: translateY(150%);
-      transition: .4s opacity;
-      opacity: 1;
-      overflow: hidden;
-      color: #C3161C;
-      font-size: 16px; }
+    height: 0;
+    overflow: hidden;
+    color: #C3161C;
+    line-height: 130%;
+    font-size: 16px; }
+    .contact-form__wrapper-form-files-error.file-input-error {
+      padding: 5px 0;
+      height: fit-content;
+      opacity: 1; }
   .contact-form__wrapper-form-files-preview {
     margin-bottom: 42px;
     display: flex;
