@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
             const formAllInput = form.querySelectorAll('[data-validate-field]');
             const contactFormSubmitBtn = form.querySelector('.contact-form-submit');
+            const formFileErorr = form.querySelector('.contact-form__wrapper-form-files-error');
             let hasSelected = false;
 
             let regx = /^((([0-9A-Za-z]{1}[-0-9A-z\.]{1,}[0-9A-Za-z]{1})|([0-9А-Яа-я]{1}[-0-9А-я\.]{1,}[0-9А-Яа-я]{1}))@([-A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/u;
@@ -87,9 +88,9 @@ document.addEventListener("DOMContentLoaded", () => {
     
                 if(formFile) {
                     if (allFiles.length === 0) {
-                        formFile.parentElement.parentElement.classList.add('file-input-error');
+                        formFileErorr.classList.add('file-input-error');
                         errCount++;
-                    } else { formFile.parentElement.parentElement.classList.remove('file-input-error') }
+                    } else { formFileErorr.classList.remove('file-input-error') }
                 } 
                     
                 if(form.querySelector('.select-box')) {
@@ -158,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (form.querySelector('[data-validate-field="file"]')) {
                 inputFile.addEventListener('click', function() {
-                    inputFile.parentElement.parentElement.classList.remove('file-input-error');
+                    formFileErorr.classList.remove('file-input-error');
                 });
     
                 inputFile.addEventListener('change', function() {
