@@ -37,10 +37,14 @@
 
         overflow: hidden;
         order: 1;
-    
+        
         &::-webkit-scrollbar {
-            display: none;
+            width: 5px;
+            border-radius: 5px;
         }
+    
+        &::-webkit-scrollbar-track {background: transparent }
+        &::-webkit-scrollbar-thumb { background: rgb(206, 206, 206) }
 
         &.active {
             max-height: 12.8em;
