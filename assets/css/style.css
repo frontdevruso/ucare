@@ -1598,7 +1598,12 @@ h2 {
     overflow: hidden;
     order: 1; }
     .select-box .options-container::-webkit-scrollbar {
-      display: none; }
+      width: 5px;
+      border-radius: 5px; }
+    .select-box .options-container::-webkit-scrollbar-track {
+      background: transparent; }
+    .select-box .options-container::-webkit-scrollbar-thumb {
+      background: #cecece; }
     .select-box .options-container.active {
       max-height: 12.8em;
       opacity: 1;
