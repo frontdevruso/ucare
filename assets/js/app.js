@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
     const burger = document.querySelector(".burger");
     const body = document.body;
@@ -7,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
         body.classList.toggle('m-open');
     });
 });
-
 if(document.querySelectorAll('.form-title')) {
     const allBtns = document.querySelectorAll('.form-title');
     const modalTitle = document.querySelector('.modal-title');
@@ -17,7 +17,6 @@ if(document.querySelectorAll('.form-title')) {
         });
     })
 }
-
 document.addEventListener("DOMContentLoaded", () => {
     const contactForm = document.querySelectorAll('.contact-form');
     if (contactForm) {
@@ -247,13 +246,11 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 });
-
 if (document.querySelector('.cookies')) {
     document.getElementById('cookiesBtn').addEventListener('click', function() {
         document.querySelector('.cookies').classList.add('cookies--hidden');
     });
 }
-
 if (document.querySelector('.header')) {
     const header = document.querySelector('.header');
     const headerHeight = parseInt(window.getComputedStyle(header).height);
@@ -272,7 +269,6 @@ if (document.querySelector('.header')) {
         checkingHeaderPosition();
     });
 }
-
 const tels = document.querySelectorAll("input[type=\"tel\"]");
 
 if (tels) {
@@ -280,7 +276,6 @@ if (tels) {
         IMask(el, { mask: "+ {0} (000) 000 00 000 00" });
     });
 }
-
 document.addEventListener("DOMContentLoaded", () => {
     if (document.querySelectorAll('[data-language-switcher]')) {
         const allLangSwitchers = document.querySelectorAll('[data-language-switcher]');
@@ -301,7 +296,6 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 });
-
 const observer = lozad('.lozad', {
     loaded: function(img) {
         img.addEventListener('load', function() {
@@ -315,7 +309,6 @@ const observer = lozad('.lozad', {
 });
 
 observer.observe();
-
 if (document.querySelector('.menu')) {
     document.querySelectorAll('.menu ul a').forEach(function(link) {
         link.addEventListener('click', function() {
@@ -324,7 +317,6 @@ if (document.querySelector('.menu')) {
         })
     });
 }
-
 if(document.querySelector('.modal')) {
     const modalWindow = document.querySelectorAll('.modal');
     const modalOpenBtns = document.querySelectorAll('.open-modal-form');
@@ -357,7 +349,6 @@ if(document.querySelector('.modal')) {
         document.querySelector('.modal--form-regular').classList.add('modal--open');
     });
 }
-
 if(document.querySelector('.partners__slider')) {
     let partnersSlider = new Swiper(".partners__slider", {
         slidesPerView: "auto",
@@ -372,7 +363,6 @@ if(document.querySelector('.partners__slider')) {
         },
     });
 }
-
 const smoothLinks = document.querySelectorAll('a[href^="#"]');
 if (smoothLinks) {
     for (let smoothLink of smoothLinks) {
