@@ -23,7 +23,7 @@
         left: -1px;
         font-size: 16px;
     
-        background: #E9E9E9;
+        background-color: #E9E9E9;
         border: 1px solid #C4C4C4;
         border-top: none;
         border-radius: 0 0 10px 10px;
@@ -37,14 +37,15 @@
 
         overflow: hidden;
         order: 1;
-        
-        &::-webkit-scrollbar {
-            width: 5px;
-            border-radius: 5px;
+
+        &::-webkit-scrollbar { width: 18px }
+          
+        &::-webkit-scrollbar-thumb {
+            border: 6px solid rgba(0, 0, 0, 0);
+            background-clip: padding-box;
+            border-radius: 9999px;
+            background-color: rgb(206, 206, 206);
         }
-    
-        &::-webkit-scrollbar-track {background: transparent }
-        &::-webkit-scrollbar-thumb { background: rgb(206, 206, 206) }
 
         &.active {
             max-height: 12.8em;
@@ -57,7 +58,14 @@
             padding: 15px 12px;
             line-height: 120%;
 
+            transition: .4s;
+            border-radius: 0 5px 5px 0;
+            
             label { cursor: pointer }
+
+            &:hover {
+                background-color: #dfdfdf;
+            }
         }
     }
 
@@ -89,9 +97,7 @@
         width: 0.65em;
         height: 0.4em;
 
-        &-opened {
-            transform: rotate(-180deg) translateY(50%);
-        }
+        &-opened { transform: rotate(-180deg) translateY(50%) }
     }
 
     &--blog {

@@ -51,8 +51,11 @@
         overflow: hidden;
         transition: .4s;
 
-        z-index: -1;
-        opacity: 0;
+        display: none;
+        width: fit-content;
+        height: fit-content;
+        
+        overflow: hidden;
 
         background-color: white;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -69,6 +72,12 @@
             color: $londonRain;
             transition: .4s;
 
+            width: 100%;
+            height: fit-content;
+            border-radius: 0;
+
+            display: flex;
+
             &.active {
                 color: white;
                 background-color: $londonRain;
@@ -82,16 +91,14 @@
 
     &:hover {
         form {
-            z-index: 10;
-            opacity: 1;
+            display: flex;
         }
     }
 
     &--hidded {
         &:hover {
             form {
-                z-index: -1;
-                opacity: 0;
+                display: none;
             }
         }
     }

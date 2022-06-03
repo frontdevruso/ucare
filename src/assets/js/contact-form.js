@@ -93,14 +93,15 @@ document.addEventListener("DOMContentLoaded", () => {
                     } else { formFileErorr.classList.remove('file-input-error') }
                 } 
                     
-                if(form.querySelector('.select-box')) {
+                if(form.querySelector('.select-box-init')) {
                     if (hasSelected === false) {
-                        form.querySelector('.select-box').classList.add('g-select-error');
+                        form.querySelector('.select-box-init').classList.add('g-select-error');
                         errCount++;
                     } else {
-                        form.querySelector('.select-box').classList.remove('g-select-error');
+                        form.querySelector('.select-box-init').classList.remove('g-select-error');
                     }
                 } 
+                    
 
                 if(formCheckbox) {
                     if (formCheckbox.checked == false) {
@@ -121,34 +122,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             // SELECT-BOX
+
+            form.querySelectorAll('.select-box').forEach(function(select) {
+                const selected = select.querySelector(".select-box-current");
+                const optionsContainer = select.querySelector(".options-container");
+                const selectArrow = select.querySelector(".select-box-arrow");
+                const optionsList = select.querySelectorAll(".option");
             
-            const selected = document.querySelector("#selectBoxCurrent");
-            const optionsContainer = document.querySelector(".options-container");
-            const selectArrow = document.getElementById("selectBoxArrow");
-            const optionsList = document.querySelectorAll(".option");
-        
-            document.addEventListener('click', (event) => {
-                let isClickInsideElement = selected.contains(event.target); 
-                if (!isClickInsideElement) {
-                    optionsContainer.classList.remove("active");
-                    selectArrow.classList.remove("select-box-arrow-opened");
-                }
-            });
-        
-            selected.addEventListener("click", () => {
-                optionsContainer.classList.add("active");
-                selectArrow.classList.toggle("select-box-arrow-opened");
-                document.querySelector('.select-box').classList.remove('g-select-error');
-            });
-        
-            optionsList.forEach(o => {
-                o.addEventListener("click", () => {
-                    hasSelected = true;
-                    selected.innerHTML = o.querySelector("label").innerHTML;
-                    optionsContainer.classList.remove("active");
-                    selectArrow.classList.remove("select-box-arrow-opened");
+                document.addEventListener('click', (event) => {
+                    let isClickInsideElement = selected.contains(event.target); 
+                    if (!isClickInsideElement) {
+                        optionsContainer.classList.remove("active");
+                        selectArrow.classList.remove("select-box-arrow-opened");
+                    }
                 });
-            });
+            
+                selected.addEventListener("click", () => {
+                    optionsContainer.classList.toggle("active");
+                    selectArrow.classList.toggle("select-box-arrow-opened");
+                    select.classList.remove('g-select-error');
+                });
+            
+                optionsList.forEach(o => {
+                    o.addEventListener("click", () => {
+                        hasSelected = true;
+                        selected.innerHTML = o.querySelector("label").innerHTML;
+                        optionsContainer.classList.remove("active");
+                        selectArrow.classList.remove("select-box-arrow-opened");
+                    });
+                });
+            })
+            
 
 
             // INPUT TYPE="FILE"
