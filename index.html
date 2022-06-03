@@ -295,7 +295,7 @@
                     </li>
                 </ul>
         
-                <a href="#" class="g-btn open-modal-form form-title">Стать партнером</a>
+                <a href="#" class="g-btn open-partners-modal-form form-title">Стать партнером</a>
             </div>
         </section>
     
@@ -310,14 +310,14 @@
                             K. Kärberi tn 16-33, Lasnamäe linnaosa, Tallinn, Harju maakond, 13812
                         </p>
                         <p>
-                            Part of <b><a href="https://bestseller.company">Bestseller.company</a></b><br>
-                            <small><a href="#">EU</a></small>
-                            <small><a href="#">USA</a></small>
-                            <small><a href="#">UA</a></small>
-                            <small><a href="#">RU</a></small>
-                            <small><a href="#">KZ</a></small>
-                            <small><a href="#">BY</a></small>
-                            <small><a href="#">CHI</a></small>
+                            Part of <b><a href="https://bestseller.company" target="_blank">Bestseller.company</a></b><br>
+                            <small><a href="#" target="_blank">EU</a></small>
+                            <small><a href="#" target="_blank">USA</a></small>
+                            <small><a href="#" target="_blank">UA</a></small>
+                            <small><a href="#" target="_blank">RU</a></small>
+                            <small><a href="#" target="_blank">KZ</a></small>
+                            <small><a href="#" target="_blank">BY</a></small>
+                            <small><a href="#" target="_blank">CHI</a></small>
                         </p>
                     </main>
                 </div>
@@ -327,8 +327,8 @@
                         <img src="./assets/images/svg/best-seller-fund.svg" alt="image">
                         <main>
                             <p>
-                                <a href="http://www.foodtechshelf.com">FoodTechShelf.com</a> - Innovative food and drink from around the world <br>
-                                by <a href="https://bestseller.fund">Bestseller.Fund</a> - “Unicorn” FoodTech investments
+                                <a href="http://www.foodtechshelf.com" target="_blank">FoodTechShelf.com</a> - Innovative food and drink from around the world <br>
+                                by <a href="https://bestseller.fund" target="_blank">Bestseller.Fund</a> - “Unicorn” FoodTech investments
                             </p>
                         </main>
                     </div>
@@ -336,8 +336,8 @@
                         <img src="./assets/images/svg/vito-house.svg" alt="image">
                         <main>
                             <p>
-                                <a href="https://www.vito.house">Vito.House</a> - International ingredient trading platform №1 <br>
-                                by <a href="https://www.vito-house.com/ru">Vito-House.com</a> - more than 20 000 products from more than 300 manufactures
+                                <a href="https://www.vito.house" target="_blank">Vito.House</a> - International ingredient trading platform №1 <br>
+                                by <a href="https://www.vito-house.com/ru" target="_blank">Vito-House.com</a> - more than 20 000 products from more than 300 manufactures
                             </p>
                         </main>
                     </div>
@@ -375,8 +375,8 @@
                             <div class="g-input">
                                 <input autocomplete="off" type="text" data-validate-field="country" placeholder="Страна" required>
                             </div>
-                            <div class="select-box" id="selectBoxForm">
-                                <div class="options-container" id="optionsContainer">
+                            <div class="select-box select-box--request select-box-init">
+                                <div class="options-container">
                             
                                     <div class="option">
                                         <input type="radio" class="radio" id="web-1" name="category" />
@@ -404,9 +404,45 @@
                                     </div>
                                 </div>
                         
-                                <div class="select-box-current" id="selectBoxCurrent">Сеть</div>
+                                <div class="select-box-current">Сеть</div>
     
-                                <svg class="select-box-arrow" id="selectBoxArrow" viewBox="0 0 13 8" fill="#A6A6A6" >
+                                <svg class="select-box-arrow" viewBox="0 0 13 8" fill="#A6A6A6" >
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.79998 6.66669L13 1.33333L11.7 -3.45862e-08L6.49999 5.33336L1.3 2.80766e-05L-2.91408e-07 1.33336L6.50001 8L5.20002 6.66667L6.49999 5.33336L7.79998 6.66669Z"/>
+                                    <path d="M5.20002 6.66667L6.50001 8L7.79998 6.66669L6.49999 5.33336L5.20002 6.66667Z" />
+                                </svg>  
+                            </div>
+                            <div class="select-box select-box--partners none">
+                                <div class="options-container">
+                            
+                                    <div class="option">
+                                        <input type="radio" class="radio" id="retail-1" name="category" />
+                                        <label for="retail-1">Retail 1</label>
+                                    </div>
+                            
+                                    <div class="option">
+                                        <input type="radio" class="radio" id="retail-2" name="category" />
+                                        <label for="retail-2">Retail 2</label>
+                                    </div>
+                            
+                                    <div class="option">
+                                        <input type="radio" class="radio" id="retail-3" name="category" />
+                                        <label for="retail-3">Retail 3</label>
+                                    </div>
+                            
+                                    <div class="option">
+                                        <input type="radio" class="radio" id="retail-4" name="category" />
+                                        <label for="retail-4">Retail 4</label>
+                                    </div>
+                            
+                                    <div class="option">
+                                        <input type="radio" class="radio" id="retail-5" name="category" />
+                                        <label for="retail-5">Retail 5</label>
+                                    </div>
+                                </div>
+                        
+                                <div class="select-box-current">Retail</div>
+    
+                                <svg class="select-box-arrow" viewBox="0 0 13 8" fill="#A6A6A6" >
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M7.79998 6.66669L13 1.33333L11.7 -3.45862e-08L6.49999 5.33336L1.3 2.80766e-05L-2.91408e-07 1.33336L6.50001 8L5.20002 6.66667L6.49999 5.33336L7.79998 6.66669Z"/>
                                     <path d="M5.20002 6.66667L6.50001 8L7.79998 6.66669L6.49999 5.33336L5.20002 6.66667Z" />
                                 </svg>  
@@ -417,9 +453,10 @@
                             <div class="contact-form__wrapper-form-files">
                                 <main>
                                     <img src="./assets/images/svg/clip-icon.svg" alt="clip-form">
-                                    <input type="file" name="file" accept=".pdf, .jpg, .png, .ppt, .doc, .xls" id="upload" multiple="" data-validate-field="file">
+                                    <input type="file" name="file" accept=".pdf, .jpg, .png, .ppt, .doc, .xls" multiple="" data-validate-field="file">
                                 </main>
                                 <p>Прикрепить презентацию и прайс-лист (форматы: pdf, jpg, png, ppt, doc, xls. Не больше 30мб, количеством не более 20 файлов)</p>
+                                <p class="contact-form__wrapper-form-files-partners none">Другой текст</p>
                             </div>
                             <span class="contact-form__wrapper-form-files-error">Добовление файла обязательно!</span>
                             <ul class="contact-form__wrapper-form-files-preview"></ul>

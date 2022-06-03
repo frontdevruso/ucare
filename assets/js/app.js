@@ -112,14 +112,15 @@ document.addEventListener("DOMContentLoaded", () => {
                     } else { formFileErorr.classList.remove('file-input-error') }
                 } 
                     
-                if(form.querySelector('.select-box')) {
+                if(form.querySelector('.select-box-init')) {
                     if (hasSelected === false) {
-                        form.querySelector('.select-box').classList.add('g-select-error');
+                        form.querySelector('.select-box-init').classList.add('g-select-error');
                         errCount++;
                     } else {
-                        form.querySelector('.select-box').classList.remove('g-select-error');
+                        form.querySelector('.select-box-init').classList.remove('g-select-error');
                     }
                 } 
+                    
 
                 if(formCheckbox) {
                     if (formCheckbox.checked == false) {
@@ -140,34 +141,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             // SELECT-BOX
+
+            form.querySelectorAll('.select-box').forEach(function(select) {
+                const selected = select.querySelector(".select-box-current");
+                const optionsContainer = select.querySelector(".options-container");
+                const selectArrow = select.querySelector(".select-box-arrow");
+                const optionsList = select.querySelectorAll(".option");
             
-            const selected = document.querySelector("#selectBoxCurrent");
-            const optionsContainer = document.querySelector(".options-container");
-            const selectArrow = document.getElementById("selectBoxArrow");
-            const optionsList = document.querySelectorAll(".option");
-        
-            document.addEventListener('click', (event) => {
-                let isClickInsideElement = selected.contains(event.target); 
-                if (!isClickInsideElement) {
-                    optionsContainer.classList.remove("active");
-                    selectArrow.classList.remove("select-box-arrow-opened");
-                }
-            });
-        
-            selected.addEventListener("click", () => {
-                optionsContainer.classList.add("active");
-                selectArrow.classList.toggle("select-box-arrow-opened");
-                document.querySelector('.select-box').classList.remove('g-select-error');
-            });
-        
-            optionsList.forEach(o => {
-                o.addEventListener("click", () => {
-                    hasSelected = true;
-                    selected.innerHTML = o.querySelector("label").innerHTML;
-                    optionsContainer.classList.remove("active");
-                    selectArrow.classList.remove("select-box-arrow-opened");
+                document.addEventListener('click', (event) => {
+                    let isClickInsideElement = selected.contains(event.target); 
+                    if (!isClickInsideElement) {
+                        optionsContainer.classList.remove("active");
+                        selectArrow.classList.remove("select-box-arrow-opened");
+                    }
                 });
-            });
+            
+                selected.addEventListener("click", () => {
+                    optionsContainer.classList.toggle("active");
+                    selectArrow.classList.toggle("select-box-arrow-opened");
+                    select.classList.remove('g-select-error');
+                });
+            
+                optionsList.forEach(o => {
+                    o.addEventListener("click", () => {
+                        hasSelected = true;
+                        selected.innerHTML = o.querySelector("label").innerHTML;
+                        optionsContainer.classList.remove("active");
+                        selectArrow.classList.remove("select-box-arrow-opened");
+                    });
+                });
+            })
+            
 
 
             // INPUT TYPE="FILE"
@@ -321,6 +325,7 @@ if(document.querySelector('.modal')) {
     const modalWindow = document.querySelectorAll('.modal');
     const modalOpenBtns = document.querySelectorAll('.open-modal-form');
     const modalOpenRegularFormBtn = document.querySelector('.open-regular-modal-form');
+    const modalOpenPartnersFormBtn = document.querySelector('.open-partners-modal-form');
 
     modalWindow.forEach(function(item) {
         if(item.querySelector('.modal-close')) {
@@ -341,12 +346,31 @@ if(document.querySelector('.modal')) {
         btn.addEventListener('click', function() {
             document.querySelector('body').classList.add('m-hidden');
             document.querySelector('.modal--form').classList.add('modal--open');
+
+            document.querySelector('.select-box--partners').classList.add('none');
+            document.querySelector('.select-box--partners').classList.remove('select-box-init')
+            document.querySelector('.select-box--request').classList.add('select-box-init');
+            document.querySelector('.select-box--request').classList.remove('none');
         });
     })
     
     modalOpenRegularFormBtn.addEventListener('click', function() {
         document.querySelector('body').classList.add('m-hidden');
         document.querySelector('.modal--form-regular').classList.add('modal--open');
+    });
+    
+    modalOpenPartnersFormBtn.addEventListener('click', function() {
+        document.querySelector('body').classList.add('m-hidden');
+        document.querySelector('.modal--form').classList.add('modal--open');
+
+        document.querySelectorAll('.contact-form__wrapper-form-files p').forEach(function(p) {
+            p.classList.toggle('none');
+        });
+
+        document.querySelector('.select-box--partners').classList.remove('none');
+        document.querySelector('.select-box--partners').classList.add('select-box-init')
+        document.querySelector('.select-box--request').classList.remove('select-box-init');
+        document.querySelector('.select-box--request').classList.add('none');
     });
 }
 if(document.querySelector('.partners__slider')) {
