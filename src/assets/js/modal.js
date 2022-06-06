@@ -35,18 +35,4 @@ if(document.querySelector('.modal')) {
         document.querySelector('body').classList.add('m-hidden');
         document.querySelector('.modal--form-regular').classList.add('modal--open');
     });
-    
-    modalOpenPartnersFormBtn.addEventListener('click', function() {
-        document.querySelector('body').classList.add('m-hidden');
-        document.querySelector('.modal--form').classList.add('modal--open');
-
-        document.querySelectorAll('.contact-form__wrapper-form-files p').forEach(function(p) {
-            p.classList.toggle('none');
-        });
-
-        document.querySelector('.select-box--partners').classList.remove('none');
-        document.querySelector('.select-box--partners').classList.add('select-box-init')
-        document.querySelector('.select-box--request').classList.remove('select-box-init');
-        document.querySelector('.select-box--request').classList.add('none');
-    });
 }
