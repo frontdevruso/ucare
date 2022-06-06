@@ -1136,7 +1136,7 @@ h2 {
     overflow: hidden;
     transition: .4s;
     display: none;
-    width: fit-content;
+    width: 48px;
     height: fit-content;
     overflow: hidden;
     background-color: white;
@@ -1144,16 +1144,22 @@ h2 {
     border-radius: 8px; }
     .lang-switcher form a {
       background-color: transparent;
-      padding: 4.5px 6px;
       font-size: 16px;
       font-weight: 700;
-      line-height: 15px;
+      line-height: 150%;
       color: #0057B8;
+      text-align: center;
       transition: .4s;
       width: 100%;
+      max-width: 48px;
       height: fit-content;
-      border-radius: 0;
-      display: flex; }
+      border-radius: 0 !important;
+      appearance: none;
+      -webkit-appearance: none;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
       .lang-switcher form a.active {
         color: white;
         background-color: #0057B8; }
