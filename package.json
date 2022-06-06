@@ -35,8 +35,8 @@
     "liveSassCompile.settings.autoprefix": null,
     "dependencies": {
         "autoprefixer": "^9.8.6",
-        "gulp-postcss": "^9.0.1",
         "gulp-concat": "^2.6.1",
+        "gulp-postcss": "^9.0.1",
         "node-sass": "^7.0.1",
         "postcss": "^8.4.5"
     }
