@@ -23,16 +23,16 @@ if(document.querySelector('.modal')) {
         btn.addEventListener('click', function() {
             document.querySelector('body').classList.add('m-hidden');
             document.querySelector('.modal--form').classList.add('modal--open');
-
-            document.querySelector('.select-box--partners').classList.add('none');
-            document.querySelector('.select-box--partners').classList.remove('select-box-init')
-            document.querySelector('.select-box--request').classList.add('select-box-init');
-            document.querySelector('.select-box--request').classList.remove('none');
         });
     })
     
     modalOpenRegularFormBtn.addEventListener('click', function() {
         document.querySelector('body').classList.add('m-hidden');
         document.querySelector('.modal--form-regular').classList.add('modal--open');
+    });
+    
+    modalOpenPartnersFormBtn.addEventListener('click', function() {
+        document.querySelector('body').classList.add('m-hidden');
+        document.querySelector('.modal--form-partners').classList.add('modal--open');
     });
 }
