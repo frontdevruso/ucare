@@ -36,6 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
             const contactFormSubmitBtn = form.querySelector('.contact-form-submit');
             const formFileErorr = form.querySelector('.contact-form__wrapper-form-files-error');
             let hasSelected = false;
+            let allFileSize = 0;
+            let allFiles = [];
+
+            validateFile(formFile, allFiles, allFileSize);
 
             let regx = /^((([0-9A-Za-z]{1}[-0-9A-z\.]{1,}[0-9A-Za-z]{1})|([0-9А-Яа-я]{1}[-0-9А-я\.]{1,}[0-9А-Яа-я]{1}))@([-A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/u;
             
@@ -119,8 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     } else {
                         form.querySelector('.select-box-init').classList.remove('g-select-error');
                     }
-                } 
-                    
+                }
 
                 if(formCheckbox) {
                     if (formCheckbox.checked == false) {
@@ -176,75 +179,73 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // INPUT TYPE="FILE"
 
-            const inputFile = document.querySelector('.contact-form__wrapper-form-files main input');
-            const allFiles = [];
-            let allFileSize = 0;
-
-            if (form.querySelector('[data-validate-field="file"]')) {
-                inputFile.addEventListener('click', function() {
-                    formFileErorr.classList.remove('file-input-error');
-                });
-    
-                inputFile.addEventListener('change', function() {
-                    if (inputFile.files[0]) {
-                        if (inputFile.files[0].size > 5 * 1024 * 1024) {
-                            alert('Ваш файл должен весить меншье 5 МБ!');
-                            return;
-                        } else if ((allFiles.length + 1) > 20) {
-                            alert('Вы не можете добавить больше 20 файлов');
-                            return;
-                        } else if (!['image/jpeg', 'image/jpg', 'image/png', 'application/vnd.ms-excel', 'application/pdf', ''].includes(inputFile.files[0].type)) {
-                            alert('Вы можете прикрепить только такие форматы: pdf, jpg, png, ppt, doc, xls.');
-                            return;
-                        } else {
-                            allFiles.push(inputFile.files[0]);
-                            allFiles.forEach(function(eachitem) {
-                                allFileSize += eachitem.size;
-                            })
-                        }
-                    }
-                    
-                    if (allFileSize > 30 * 1024 * 1024) {
-                        alert('Ваши файлы должен весить меншье 30 МБ');
-                        return;
-                    }
-    
-                    uploadFile(inputFile.files[0]);
-                    showingFiles(inputFile.files[0].name);
-                    deletingFiles();
-
-                    console.log(allFiles);
-                });
-    
-                function uploadFile(file) {
-                    var reader = new FileReader();
-    
-                    reader.onerror = function(e) { alert('Ошибка') }
-                    reader.readAsDataURL(file);
-                }
-    
-                function showingFiles(fileName) {
-                    const filesContainer = document.querySelector('.contact-form__wrapper-form-files-preview');
-                    filesContainer.innerHTML +=
-                    `<li>` +
-                        `<button data-file-name="${fileName}" type="button"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeIcon"></use></svg></button>` +
-                        `<span>${fileName}</span>` +
-                    `</li>`
-                }
-    
-                function deletingFiles() {
-                    let allpreviewFiles = document.querySelectorAll('.contact-form__wrapper-form-files-preview li');
-                    allpreviewFiles.forEach(function(item) {
-                        item.querySelector('button').addEventListener('click', function() {
-                            const fileName = this.getAttribute('data-file-name');
-    
-                            allFiles.forEach(function(arrayFiles, index) {
-                                if(arrayFiles.name === fileName) { allFiles.splice(index) }
-                            }); 
-    
-                            item.remove();
-                        });
+            function validateFile(inputFile, allFiles, allFileSize) {
+                if (form.querySelector('[data-validate-field="file"]')) {
+                    inputFile.addEventListener('click', function() {
+                        formFileErorr.classList.remove('file-input-error');
                     });
+        
+                    inputFile.addEventListener('change', function() {
+                        if (inputFile.files[0]) {
+                            if (inputFile.files[0].size > 5 * 1024 * 1024) {
+                                alert('Ваш файл должен весить меншье 5 МБ!');
+                                return;
+                            } else if ((allFiles.length + 1) > 20) {
+                                alert('Вы не можете добавить больше 20 файлов');
+                                return;
+                            } else if (!['image/jpeg', 'image/jpg', 'image/png', 'application/vnd.ms-excel', 'application/pdf', ''].includes(inputFile.files[0].type)) {
+                                alert('Вы можете прикрепить только такие форматы: pdf, jpg, png, ppt, doc, xls.');
+                                return;
+                            } else {
+                                allFiles.push(inputFile.files[0]);
+                                allFiles.forEach(function(eachitem) {
+                                    allFileSize += eachitem.size;
+                                })
+                            }
+                        }
+                        
+                        if (allFileSize > 30 * 1024 * 1024) {
+                            alert('Ваши файлы должен весить меншье 30 МБ');
+                            return;
+                        }
+        
+                        uploadFile(inputFile.files[0]);
+                        renderFiles(inputFile.files[0].name);
+                        deletingFiles();
+    
+                        console.log(allFiles);
+                    });
+        
+                    function uploadFile(file) {
+                        var reader = new FileReader();
+        
+                        reader.onerror = function(e) { alert('Ошибка') }
+                        reader.readAsDataURL(file);
+                    }
+        
+                    function renderFiles(fileName) {
+                        const filesContainer = inputFile.parentElement.parentElement.parentElement.querySelector('.contact-form__wrapper-form-files-preview')
+                        filesContainer.innerHTML +=
+                        `<li>` +
+                            `<button data-file-name="${fileName}" type="button"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeIcon"></use></svg></button>` +
+                            `<span>${fileName}</span>` +
+                        `</li>`
+                    }
+        
+                    function deletingFiles() {
+                        let allpreviewFiles = inputFile.parentElement.parentElement.parentElement.querySelectorAll('.contact-form__wrapper-form-files-preview li');
+                        allpreviewFiles.forEach(function(item) {
+                            item.querySelector('button').addEventListener('click', function() {
+                                const fileName = this.getAttribute('data-file-name');
+        
+                                allFiles.forEach(function(arrayFiles, index) {
+                                    if(arrayFiles.name === fileName) { allFiles.splice(index) }
+                                }); 
+        
+                                item.remove();
+                            });
+                        });
+                    }
                 }
             }
         })
@@ -346,17 +347,17 @@ if(document.querySelector('.modal')) {
         btn.addEventListener('click', function() {
             document.querySelector('body').classList.add('m-hidden');
             document.querySelector('.modal--form').classList.add('modal--open');
-
-            document.querySelector('.select-box--partners').classList.add('none');
-            document.querySelector('.select-box--partners').classList.remove('select-box-init')
-            document.querySelector('.select-box--request').classList.add('select-box-init');
-            document.querySelector('.select-box--request').classList.remove('none');
         });
     })
     
     modalOpenRegularFormBtn.addEventListener('click', function() {
         document.querySelector('body').classList.add('m-hidden');
         document.querySelector('.modal--form-regular').classList.add('modal--open');
+    });
+    
+    modalOpenPartnersFormBtn.addEventListener('click', function() {
+        document.querySelector('body').classList.add('m-hidden');
+        document.querySelector('.modal--form-partners').classList.add('modal--open');
     });
 }
 if(document.querySelector('.partners__slider')) {
